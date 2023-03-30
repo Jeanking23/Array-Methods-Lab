@@ -1,11 +1,9 @@
-
 //The purpose of this Lab is to get a solid understanding of the .filter() and .map() advanced array methods.
 //These methods will be used extensively on future projects
 
 
 //Dataset
-let dishes = [
-    {
+let dishes = [{
         "id": 1,
         "name": "Pizza",
         "cuisine": "Italian",
@@ -115,17 +113,17 @@ let dishes = [
 //Example function
 //IMPORTANT: Take the time to step through this example function with a breakpoint until you could explain what is going on to someone else before starting this lab.
 
-function filterExample(){
+function filterExample() {
     //Debug tip: Use a console.log(el) inside the filter function to get a visualization of what el represents and see all its properties! This helps you to know what you can access with dot notation inside the filter. Do this every time you use a .filter or else you are working in the dark!
     let results;
-    results = dishes.filter(function(el){
+    results = dishes.filter(function(el) {
         console.log("el inside filterExample's filter: ", el)
-        if(el.cuisine === "Mexican"){
+        if (el.cuisine === "Mexican") {
             return true;
-        }
-        else{
+        } else {
             return false;
-        }})
+        }
+    })
 
     return results;
 }
@@ -139,7 +137,7 @@ console.log('mexicanFood from filterExample', mexicanFood)
 //1. Create a function that will return all dishes with the cuisine type of "vegetarian"
 //Filter
 
-function problemOne(){
+function problemOne() {
 
     let results;
 
@@ -148,16 +146,28 @@ function problemOne(){
 
 //2. Create a function that will prompt the user to enter a cuisine type and then return all dishes that match that type
 //Filter
-
+function filterDishesByCuisine(dishes) {
+    const cuisineType = prompt("Enter a cuisine type to filter by:");
+    const filteredDishes = dishes.filter(dish => dish.cuisine === cuisineType);
+    return filteredDishes;
+}
 
 
 //3. Create a function that will return all dishes with the cuisine type of "Italian" and a serving size greater than 5.
 //Filter
-
+function filterItalianDishesWithServingSizeGreaterThan5(dishes) {
+    const filteredDishes = dishes.filter(dish => dish.cuisine === 'Italian' && dish.serving_size > 5);
+    return filteredDishes;
+}
 
 
 //4. Create a function that will return only dishes whose id number matches their serving count.
 //Filter
+function filterDishesByIdAndServingCount(dishes) {
+    const filteredDishes = dishes.filter(dish => dish.id === dish.serving_count);
+    return filteredDishes;
+}
+
 
 
 
