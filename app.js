@@ -173,6 +173,10 @@ function filterDishesByIdAndServingCount(dishes) {
 
 //5. Create a function that will return only dishes whose serving count is even.
 //Filter
+function filterDishesByEvenServingCount(dishes) {
+    const filteredDishes = dishes.filter(dish => dish.serving_count % 2 === 0);
+    return filteredDishes;
+}
 
 
 
