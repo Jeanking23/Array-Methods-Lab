@@ -184,6 +184,10 @@ function filterDishesByEvenServingCount(dishes) {
 //Hint: You do not want to check the array's indexes to find out what the array INCLUDES.
 //Double Hint: Research 'javascript does array include item'
 //Filter
+function filterDishesByChickpeaIngredient(dishes) {
+    const filteredDishes = dishes.filter(dish => dish.ingredients.includes("chickpea"));
+    return filteredDishes;
+}
 
 
 
